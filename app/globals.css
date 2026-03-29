@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --site-bg: #f8f8f6;
+  --site-surface: #ffffff;
+  --site-fg: #0a0a0a;
+  --site-muted: #4a4a4a;
+  --site-subtle: #6b6b6b;
+  --site-line: rgba(10, 10, 10, 0.05);
+  --site-line-strong: rgba(10, 10, 10, 0.09);
+  --proof-bg: #020202;
+  --proof-fg: #f4f4f5;
+  --proof-muted: #6e6e73;
+  --proof-whisper: #48484d;
+  --space-section: clamp(7.5rem, 19vw, 15rem);
+  --space-section-loose: clamp(10rem, 24vw, 20rem);
+  --space-after-hero: clamp(11rem, 28vw, 24rem);
+  --space-block: clamp(3.5rem, 9vw, 6rem);
+  --content-max: 72rem;
+  --measure: 32rem;
+  --measure-wide: 38rem;
+  --grid-cell: 5.5rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--site-bg);
+  --color-foreground: var(--site-fg);
+  --font-sans: var(--font-sans-jp), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif-jp), ui-serif, "Hiragino Mincho ProN", serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--site-bg);
+  color: var(--site-fg);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  font-feature-settings: "palt" 1;
+}
+
+.site-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: min(var(--content-max), calc(100% - 2rem));
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    max-width: min(var(--content-max), calc(100% - 5rem));
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.site-y {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+.site-y-loose {
+  padding-top: var(--space-section-loose);
+  padding-bottom: var(--space-section-loose);
+}
+
+/* ヒーロー：構造グリッド＋極薄の光（装飾ではなく深度） */
+.hero-surface {
+  --hero-pad: max(1.25rem, env(safe-area-inset-left));
+  position: relative;
+  background-color: var(--site-bg);
+  background-image:
+    radial-gradient(
+      ellipse 120% 80% at 50% -30%,
+      rgba(255, 255, 255, 0.55),
+      transparent 55%
+    ),
+    linear-gradient(to right, var(--site-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--site-line) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    var(--grid-cell) var(--grid-cell),
+    var(--grid-cell) var(--grid-cell);
+  background-position:
+    center top,
+    var(--hero-pad) 0,
+    var(--hero-pad) 0;
+}
+
+@media (min-width: 768px) {
+  .hero-surface {
+    --hero-pad: max(0px, calc(50vw - min(var(--content-max), calc(100% - 5rem)) / 2));
+    background-position: center top, var(--hero-pad) 0, var(--hero-pad) 0;
+  }
+}
+
+.text-balance-safe {
+  text-wrap: balance;
 }
