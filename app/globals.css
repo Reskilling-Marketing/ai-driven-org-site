@@ -1,18 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --site-bg: #f4f4f5;
+  --site-bg: #f8f8f6;
   --site-surface: #ffffff;
-  --site-fg: #202123;
-  --site-muted: #4d4f55;
-  --site-subtle: #6d7178;
-  --site-line: rgba(17, 24, 39, 0.06);
-  --site-line-strong: rgba(17, 24, 39, 0.12);
-  --site-accent: #10a37f;
-  --site-accent-soft: rgba(16, 163, 127, 0.08);
-  --space-section: clamp(6.5rem, 14vw, 10rem);
-  --space-section-loose: clamp(8rem, 17vw, 13rem);
+  --site-fg: #0a0a0a;
+  --site-muted: #4a4a4a;
+  --site-subtle: #6b6b6b;
+  --site-line: rgba(10, 10, 10, 0.05);
+  --site-line-strong: rgba(10, 10, 10, 0.09);
+  --proof-bg: #020202;
+  --proof-fg: #f4f4f5;
+  --proof-muted: #6e6e73;
+  --proof-whisper: #48484d;
+  --space-section: clamp(7.5rem, 19vw, 15rem);
+  --space-section-loose: clamp(10rem, 24vw, 20rem);
+  --space-after-hero: clamp(11rem, 28vw, 24rem);
+  --space-block: clamp(3.5rem, 9vw, 6rem);
   --content-max: 72rem;
+  --measure: 32rem;
+  --measure-wide: 38rem;
+  --grid-cell: 5.5rem;
 }
 
 @theme inline {
@@ -31,8 +38,8 @@ body {
   background: var(--site-bg);
   color: var(--site-fg);
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.72;
+  font-size: 15px;
+  line-height: 1.65;
   font-feature-settings: "palt" 1;
 }
 
@@ -63,44 +70,36 @@ body {
   padding-bottom: var(--space-section-loose);
 }
 
-.hero-surface,
-.section-surface {
+/* ヒーロー：構造グリッド＋極薄の光（装飾ではなく深度） */
+.hero-surface {
+  --hero-pad: max(1.25rem, env(safe-area-inset-left));
   position: relative;
   background-color: var(--site-bg);
-  background-image: radial-gradient(circle at 18% -8%, rgba(16, 163, 127, 0.06), transparent 34%);
+  background-image:
+    radial-gradient(
+      ellipse 120% 80% at 50% -30%,
+      rgba(255, 255, 255, 0.55),
+      transparent 55%
+    ),
+    linear-gradient(to right, var(--site-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--site-line) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    var(--grid-cell) var(--grid-cell),
+    var(--grid-cell) var(--grid-cell);
+  background-position:
+    center top,
+    var(--hero-pad) 0,
+    var(--hero-pad) 0;
 }
 
-.section-card {
-  border: 1px solid var(--site-line);
-  background: var(--site-surface);
-  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.03), 0 6px 18px rgba(17, 24, 39, 0.018);
+@media (min-width: 768px) {
+  .hero-surface {
+    --hero-pad: max(0px, calc(50vw - min(var(--content-max), calc(100% - 5rem)) / 2));
+    background-position: center top, var(--hero-pad) 0, var(--hero-pad) 0;
+  }
 }
 
-.cta-primary {
-  background: var(--site-accent);
-  color: #ffffff;
-  transition: opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease;
-}
-
-.cta-primary:hover {
-  opacity: 0.92;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(16, 163, 127, 0.2);
-}
-
-.cta-secondary {
-  border: 1px solid var(--site-line-strong);
-  background: var(--site-surface);
-  color: var(--site-fg);
-  transition: background-color 180ms ease, border-color 180ms ease;
-}
-
-.cta-secondary:hover {
-  background-color: #f9fafb;
-  border-color: rgba(17, 24, 39, 0.2);
-}
-
-.pill {
-  border: 1px solid var(--site-line-strong);
-  background: var(--site-accent-soft);
+.text-balance-safe {
+  text-wrap: balance;
 }
