@@ -1,31 +1,35 @@
-import LuxArchitecture from "@/components/LuxArchitecture";
-import LuxClientFit from "@/components/LuxClientFit";
-import LuxDialogue from "@/components/LuxDialogue";
-import LuxEvidence from "@/components/LuxEvidence";
-import LuxFooter from "@/components/LuxFooter";
-import LuxHeader from "@/components/LuxHeader";
-import LuxHero from "@/components/LuxHero";
-import LuxPhilosophy from "@/components/LuxPhilosophy";
-import LuxStatement from "@/components/LuxStatement";
-import LuxStickyCTA from "@/components/LuxStickyCTA";
-import LuxWhyChosen from "@/components/LuxWhyChosen";
+import AIOrg from "@/components/AIOrg";
+import FinalCTA from "@/components/FinalCTA";
+import Hero from "@/components/Hero";
+import Outcomes from "@/components/Outcomes";
+import Principles from "@/components/Principles";
+import Problem from "@/components/Problem";
+import Proof from "@/components/Proof";
+import ProofClosing from "@/components/ProofClosing";
+import Services from "@/components/Services";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
+import Solution from "@/components/Solution";
+import Target from "@/components/Target";
 
 export default function Home() {
   return (
     <div className="flex min-h-full flex-col">
-      <LuxHeader />
-      <main className="flex-1 pb-[calc(5.5rem+env(safe-area-inset-bottom))] md:pb-0">
-        <LuxHero />
-        <LuxStatement />
-        <LuxWhyChosen />
-        <LuxArchitecture />
-        <LuxEvidence />
-        <LuxPhilosophy />
-        <LuxClientFit />
-        <LuxDialogue />
+      <SiteHeader />
+      <main className="flex-1">
+        <Hero />
+        <Target />
+        <Problem />
+        <Solution />
+        <Proof />
+        <AIOrg />
+        <Services />
+        <Outcomes />
+        <Principles />
+        <ProofClosing />
+        <FinalCTA />
       </main>
-      <LuxStickyCTA />
-      <LuxFooter />
+      <SiteFooter />
     </div>
   );
 }
