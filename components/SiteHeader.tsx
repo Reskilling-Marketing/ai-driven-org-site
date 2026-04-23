@@ -10,13 +10,13 @@ const navItems = [
 
 export default function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--site-line)] bg-[var(--site-bg)]/85 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--site-line)] bg-[var(--site-surface)]/88 backdrop-blur-md">
       <div className="site-container flex h-14 items-center justify-between gap-5 md:h-[3.75rem]">
         <Link
           href="/"
-          className="font-mono text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--site-muted)] transition-colors hover:text-[var(--site-fg)]"
+          className="text-sm font-medium tracking-[-0.01em] text-[var(--site-muted)] transition-colors hover:text-[var(--site-fg)]"
         >
-          Thought Driven Studio
+          Initial AI
         </Link>
         <nav
           className="flex items-center gap-3 sm:gap-6 md:gap-8"
@@ -26,7 +26,7 @@ export default function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[10px] font-medium uppercase tracking-[0.08em] text-[var(--site-subtle)] transition-colors hover:text-[var(--site-fg)] sm:text-[11px]"
+              className="text-xs font-medium text-[var(--site-subtle)] transition-colors hover:text-[var(--site-fg)] sm:text-sm"
             >
               {item.label}
             </a>

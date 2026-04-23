@@ -74,7 +74,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="section-card mt-10 grid gap-5 rounded-2xl p-6 md:grid-cols-2 md:p-8">
+    <form onSubmit={onSubmit} className="section-card mt-10 grid gap-5 rounded-3xl p-6 md:grid-cols-2 md:p-8">
       <label className="flex flex-col gap-2 text-sm">
         会社名
         <input
@@ -82,7 +82,7 @@ export default function ContactForm() {
           name="company"
           value={formData.company}
           onChange={(event) => setFormData((prev) => ({ ...prev, company: event.target.value }))}
-          className="rounded-md border border-[var(--site-line-strong)] bg-[rgba(7,11,20,0.6)] px-3 py-2 text-sm outline-none ring-[var(--site-accent)]/50 transition focus:ring-2"
+          className="rounded-xl border border-[var(--site-line)] bg-[var(--site-surface)] px-3 py-2.5 text-sm outline-none ring-[var(--site-accent)]/35 transition focus:ring-2"
           placeholder="株式会社Example"
           required
           autoComplete="organization"
@@ -95,7 +95,7 @@ export default function ContactForm() {
           name="name"
           value={formData.name}
           onChange={(event) => setFormData((prev) => ({ ...prev, name: event.target.value }))}
-          className="rounded-md border border-[var(--site-line-strong)] bg-[rgba(7,11,20,0.6)] px-3 py-2 text-sm outline-none ring-[var(--site-accent)]/50 transition focus:ring-2"
+          className="rounded-xl border border-[var(--site-line)] bg-[var(--site-surface)] px-3 py-2.5 text-sm outline-none ring-[var(--site-accent)]/35 transition focus:ring-2"
           placeholder="山田 太郎"
           required
           autoComplete="name"
@@ -108,7 +108,7 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
-          className="rounded-md border border-[var(--site-line-strong)] bg-[rgba(7,11,20,0.6)] px-3 py-2 text-sm outline-none ring-[var(--site-accent)]/50 transition focus:ring-2"
+          className="rounded-xl border border-[var(--site-line)] bg-[var(--site-surface)] px-3 py-2.5 text-sm outline-none ring-[var(--site-accent)]/35 transition focus:ring-2"
           placeholder="example@company.jp"
           required
           autoComplete="email"
@@ -121,7 +121,7 @@ export default function ContactForm() {
           rows={4}
           value={formData.challenge}
           onChange={(event) => setFormData((prev) => ({ ...prev, challenge: event.target.value }))}
-          className="rounded-md border border-[var(--site-line-strong)] bg-[rgba(7,11,20,0.6)] px-3 py-2 text-sm outline-none ring-[var(--site-accent)]/50 transition focus:ring-2"
+          className="rounded-xl border border-[var(--site-line)] bg-[var(--site-surface)] px-3 py-2.5 text-sm outline-none ring-[var(--site-accent)]/35 transition focus:ring-2"
           placeholder="現状の判断がどこで詰まり、何を変えたいかを簡潔に記載してください"
           required
         />
@@ -133,7 +133,7 @@ export default function ContactForm() {
           rows={4}
           value={formData.objective}
           onChange={(event) => setFormData((prev) => ({ ...prev, objective: event.target.value }))}
-          className="rounded-md border border-[var(--site-line-strong)] bg-[rgba(7,11,20,0.6)] px-3 py-2 text-sm outline-none ring-[var(--site-accent)]/50 transition focus:ring-2"
+          className="rounded-xl border border-[var(--site-line)] bg-[var(--site-surface)] px-3 py-2.5 text-sm outline-none ring-[var(--site-accent)]/35 transition focus:ring-2"
           placeholder="何を相談したいかではなく、どの前提を疑っているかを記載してください"
           required
         />
@@ -144,7 +144,7 @@ export default function ContactForm() {
           {message ? (
             <p
               className={`mt-2 text-xs ${
-                status === "success" ? "text-emerald-300" : "text-rose-300"
+                status === "success" ? "text-emerald-600" : "text-rose-600"
               }`}
               aria-live="polite"
             >
@@ -155,7 +155,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="cta-primary inline-flex h-11 items-center justify-center rounded-md px-7 text-[11px] font-semibold uppercase tracking-[0.14em] disabled:cursor-not-allowed disabled:opacity-60"
+          className="cta-primary inline-flex h-11 items-center justify-center rounded-xl px-6 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? "送信中..." : "適合性を確認する"}
         </button>

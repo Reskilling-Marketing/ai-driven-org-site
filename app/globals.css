@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --site-bg: #080808;
-  --site-surface: #101010;
-  --site-fg: #f2f2f2;
-  --site-muted: #b0b0b0;
-  --site-subtle: #7c7c7c;
-  --site-line: rgba(255, 255, 255, 0.12);
-  --site-line-strong: rgba(255, 255, 255, 0.22);
-  --site-accent: #f2f2f2;
-  --site-accent-soft: rgba(255, 255, 255, 0.08);
+  --site-bg: #f4f4f5;
+  --site-surface: #ffffff;
+  --site-fg: #202123;
+  --site-muted: #4d4f55;
+  --site-subtle: #6d7178;
+  --site-line: rgba(17, 24, 39, 0.06);
+  --site-line-strong: rgba(17, 24, 39, 0.12);
+  --site-accent: #10a37f;
+  --site-accent-soft: rgba(16, 163, 127, 0.08);
   --space-section: clamp(6.5rem, 14vw, 10rem);
   --space-section-loose: clamp(8rem, 17vw, 13rem);
   --content-max: 72rem;
@@ -31,8 +31,8 @@ body {
   background: var(--site-bg);
   color: var(--site-fg);
   font-family: var(--font-sans);
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.72;
   font-feature-settings: "palt" 1;
 }
 
@@ -67,21 +67,37 @@ body {
 .section-surface {
   position: relative;
   background-color: var(--site-bg);
+  background-image: radial-gradient(circle at 18% -8%, rgba(16, 163, 127, 0.06), transparent 34%);
 }
 
 .section-card {
   border: 1px solid var(--site-line);
-  background: #0c0c0c;
+  background: var(--site-surface);
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.03), 0 6px 18px rgba(17, 24, 39, 0.018);
 }
 
 .cta-primary {
   background: var(--site-accent);
-  color: #090909;
-  transition: opacity 180ms ease;
+  color: #ffffff;
+  transition: opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .cta-primary:hover {
-  opacity: 0.86;
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(16, 163, 127, 0.2);
+}
+
+.cta-secondary {
+  border: 1px solid var(--site-line-strong);
+  background: var(--site-surface);
+  color: var(--site-fg);
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.cta-secondary:hover {
+  background-color: #f9fafb;
+  border-color: rgba(17, 24, 39, 0.2);
 }
 
 .pill {
