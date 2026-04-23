@@ -24,9 +24,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Initial AI | AIドリブン組織構築支援",
+  title: "Thought Driven Studio | 思想ドリブンLP",
   description:
-    "中小企業向け。AIを活用して、1人で会社を回せる業務効率化構造を設計するコンサルティング。",
+    "売るためではなく、選ぶためのページ。紹介で届いた人物に向け、思想と適合性を示す。",
+  openGraph: {
+    title: "Thought Driven Studio | 思想ドリブンLP",
+    description:
+      "富裕層・投資家・事業オーナー向け。売らず、説明しすぎず、思想で選別するページ。",
+    type: "website",
+    locale: "ja_JP",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Thought Driven Studio | 思想ドリブンLP",
+    description:
+      "思想が合う相手とだけ意思決定を設計する、選別型の対話ページ。",
+  },
 };
 
 export default function RootLayout({
