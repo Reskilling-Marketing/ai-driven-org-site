@@ -8,7 +8,6 @@
   --site-subtle: #6b6b6b;
   --site-line: rgba(10, 10, 10, 0.05);
   --site-line-strong: rgba(10, 10, 10, 0.09);
-  --site-accent: #0a0a0a;
   --proof-bg: #020202;
   --proof-fg: #f4f4f5;
   --proof-muted: #6e6e73;
@@ -71,7 +70,7 @@ body {
   padding-bottom: var(--space-section-loose);
 }
 
-/* ヒーロー：構造グリッド＋極薄の光（Initial AI LP と同系） */
+/* ヒーロー：構造グリッド＋極薄の光（装飾ではなく深度） */
 .hero-surface {
   --hero-pad: max(1.25rem, env(safe-area-inset-left));
   position: relative;
@@ -103,24 +102,4 @@ body {
 
 .text-balance-safe {
   text-wrap: balance;
-}
-
-.section-card {
-  border: 1px solid var(--site-line-strong);
-  background: var(--site-surface);
-  box-shadow: 0 1px 2px rgba(10, 10, 10, 0.04);
-}
-
-.section-surface {
-  background: var(--site-bg);
-}
-
-.cta-primary {
-  background: var(--site-accent);
-  color: var(--site-surface);
-  transition: opacity 180ms ease;
-}
-
-.cta-primary:hover {
-  opacity: 0.86;
 }

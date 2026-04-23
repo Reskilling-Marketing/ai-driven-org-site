@@ -24,9 +24,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Invitation Brief | 招待者限定LP",
+  title: "Initial AI | AIドリブン組織構築支援",
   description:
-    "紹介者だけが閲覧できる、超富裕層向けの思想ドリブンLP。売らず、選別する。",
+    "中小企業向け。AIを活用して、1人で会社を回せる業務効率化構造を設計するコンサルティング。",
 };
 
 export default function RootLayout({
