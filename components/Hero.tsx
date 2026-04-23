@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="site-container flex flex-1 flex-col justify-center py-16 md:py-28">
         <div className="mx-auto w-full max-w-5xl text-center md:text-left">
           <p className="font-mono text-[10px] font-medium uppercase tracking-[0.38em] text-[var(--site-subtle)]">
-            Initial AI / AIドリブン組織構築支援
+            Reskilling Marketing / AIドリブン組織構築支援
           </p>
           <h1 className="mt-8 font-serif text-[clamp(2.5rem,9vw,5.5rem)] font-medium leading-[1.08] tracking-[-0.04em] text-[var(--site-fg)] text-balance-safe md:mt-10">
             1人で、会社を回せるか。
